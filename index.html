@@ -192,8 +192,10 @@
                 camera.position.z -= (0.1 + speed); 
                 sphere.rotation.z += 0.1; // 구체도 미친듯이 회전시킴
 
-                // 2. 카메라가 충분히 들어가면 (z < -10) 뭔가 다른 일을 할 수도 있음
-                // 예: window.location.href = "game.html"; 
+                // 카메라가 -2 지점(구체 안)까지 들어가면 페이지 이동!
+                if (camera.position.z < -2) {
+                    window.location.href = "main.html"; // 페이지 이동 명령어
+                }
                 
             } else {
                 // 3. 대기 모드일 때: 마우스 따라다니기 (Parallax)
